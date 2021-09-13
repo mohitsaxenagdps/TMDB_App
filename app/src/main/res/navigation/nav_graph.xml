@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.tmdbapp.presentation.MovieFragment"
+        android:label="Popular Movies"
+        tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/tvShowFragment"
+        android:name="com.example.tmdbapp.presentation.TvShowFragment"
+        android:label="Popular TV Shows"
+        tools:layout="@layout/fragment_tv_show" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tmdbapp.presentation.HomeFragment"
+        android:label="TMDB APP"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tvShowFragment"
+            app:destination="@id/tvShowFragment" />
+    </fragment>
+</navigation>
